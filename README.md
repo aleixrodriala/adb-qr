@@ -4,19 +4,7 @@ Pair your Android phone for wireless debugging by scanning a QR code in your
 terminal — like Android Studio's *"Pair device with QR code"*, but for the
 CLI. No typing pairing codes, no looking up IPs and ports.
 
-```
-$ adb-qr
-█████████████████████████████████
-██ ▄▄▄▄▄ █▀▄██▀▀▀█▄▀██ ▄▄▄▄▄ ██
-██ █   █ █ ▄▀█ ▄█▄█▄▄█ █   █ ██
-██ █▄▄▄█ ██ █ ▄ █▄▀▀▄█ █▄▄▄█ ██
-██▄▄▄▄▄▄▄█▄▄████▄█▄▄▄█▄▄▄▄▄▄▄██
-            ...
-On the phone: Developer options > Wireless debugging > Pair device with QR code
-Waiting for scan (up to 120s)... found 192.168.1.42:40331
-Successfully paired to 192.168.1.42:40331 [guid=adb-XXXXXXXX-YYYYYY]
-Connected: 192.168.1.42:44915
-```
+![adb-qr pairing session](docs/demo.png)
 
 ## Why another QR-pairing tool?
 
