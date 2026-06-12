@@ -1,19 +1,30 @@
 # adb-qr
 
-Pair your Android phone for wireless debugging by scanning a QR code in your
-terminal — like Android Studio's *"Pair device with QR code"*, but for the
-CLI. No typing pairing codes, no looking up IPs and ports.
+The missing `adb pair --qr`: pair your Android phone for wireless debugging
+by scanning a QR code in your terminal.
 
 ![adb-qr pairing session](docs/demo.png)
 
-## Why another QR-pairing tool?
+## Why
 
-Existing tools ([adb-wireless](https://github.com/teamclouday/adb-wireless),
-[adb-qr](https://github.com/oosawy/adb-qr), and friends) run their **own**
-mDNS listener to discover the phone after it scans the QR. That works on a
-native host — and silently fails inside **WSL2, containers, and VMs**, where
-LAN multicast never reaches the virtualized network. The QR renders, the
-phone scans it, and then... nothing.
+Wireless debugging with plain adb is a chore: open Wireless debugging on the
+phone, tap *Pair device with pairing code*, read a 6-digit code and an
+`ip:port` off the phone screen, type `adb pair 192.168.1.42:40331`, type the
+code, then read off a *different* port for `adb connect`. Android Studio has
+had one-scan QR pairing since Android 11 shipped it — the adb CLI never got
+it.
+
+`adb-qr` is that flow for the terminal: run it, scan the QR with the phone,
+and you're paired *and* connected. No codes, no IPs, no ports.
+
+## How it's different from other QR tools
+
+Tools like [adb-wireless](https://github.com/teamclouday/adb-wireless) and
+[adb-qr](https://github.com/oosawy/adb-qr) pioneered terminal QR pairing,
+running their **own** mDNS listener to discover the phone after it scans.
+That works on a native host — and silently fails inside **WSL2, containers,
+and VMs**, where LAN multicast never reaches the virtualized network. The QR
+renders, the phone scans it, and then... nothing.
 
 `adb-qr` doesn't listen for mDNS at all. It asks the **adb server itself**
 what it sees (`adb mdns services`), so discovery happens wherever the server

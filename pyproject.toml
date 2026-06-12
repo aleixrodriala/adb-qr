@@ -1,7 +1,7 @@
 [project]
 name = "adb-qr"
 version = "0.1.0"
-description = "Pair Android devices for wireless ADB by QR code -- discovery via adb's own mDNS, so it works even in WSL2, containers and VMs"
+description = "The missing `adb pair --qr`: pair Android wireless debugging by scanning a QR code in your terminal. Works everywhere adb does, even WSL2."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"
