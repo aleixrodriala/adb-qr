@@ -27,20 +27,23 @@ works, `adb-qr` works.
 With [uv](https://docs.astral.sh/uv/) (recommended):
 
 ```sh
-uv tool install git+https://github.com/aleixrodriala/adb-qr
+uv tool install adb-qr
 ```
 
 With [pipx](https://pipx.pypa.io/):
 
 ```sh
-pipx install git+https://github.com/aleixrodriala/adb-qr
+pipx install adb-qr
 ```
 
 Or run it once without installing anything:
 
 ```sh
-uvx --from git+https://github.com/aleixrodriala/adb-qr adb-qr
+uvx adb-qr
 ```
+
+For the latest development version, use
+`git+https://github.com/aleixrodriala/adb-qr` in place of `adb-qr`.
 
 ### Requirements
 
